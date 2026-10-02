@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// The header + content + floating-action-button shell shared by every
-/// feature's list screen, so each one only has to supply its title,
-/// content, and what the FAB does.
 class FeatureScaffold extends StatelessWidget {
   const FeatureScaffold({
     super.key,
