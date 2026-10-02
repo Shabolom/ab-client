@@ -1,12 +1,5 @@
 import 'package:dio/dio.dart';
 
-/// Carries the gateway's session between requests.
-///
-/// The gateway does not use cookies: login/register (and any authenticated
-/// call where the auth service rotated the pair) return the tokens in the
-/// `Authorization` and `Refresh-Token` response headers, and every
-/// non-public route expects both back as request headers
-/// (see `internal/di/echo-middleware.go` in ab-gate-way).
 class AuthHeadersInterceptor extends Interceptor {
   static const _accessHeader = 'authorization';
   static const _refreshHeader = 'refresh-token';
