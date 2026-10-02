@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// A consistent shell for "create/edit X" dialogs: title, scrollable form
-/// body, an inline error banner, and Cancel/Submit actions that disable
-/// themselves while [onSubmit] is in flight so a slow request can't be
-/// fired twice by an impatient double-tap.
-///
-/// [onSubmit] returns the error message on failure, or `null` on success
-/// (in which case the dialog closes itself).
+
 class FormDialog extends StatefulWidget {
   const FormDialog({
     super.key,
