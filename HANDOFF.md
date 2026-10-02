@@ -6,8 +6,7 @@
 
 ## Что это за проект
 
-Flutter-клиент (admin-панель) для кастомного A/B-тестинг сервиса. Бэкенд — микросервисы на Go,
-лежат в `C:\Users\razor\GolandProjects\`:
+Flutter-клиент (admin-панель) для кастомного A/B-тестинг сервиса. Бэкенд — микросервисы на Go
 
 - `ab-gate-way` — единственный сервис, с которым сейчас работает клиент (REST-шлюз, `docs/echo/openapi.yaml`)
 - `ab-microservice`, `auth-micro-service`, `notification_service`, `cdp-segment-loader`,
