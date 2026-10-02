@@ -34,13 +34,6 @@ class _MutableUser {
       User(id: id, mail: mail, name: name, age: age, createdAt: createdAt, addedAt: addedAt);
 }
 
-/// In-memory stand-in for the whole gateway backend, used when the app is
-/// built/run with `--dart-define=USE_MOCK_API=true` (see [AppConfig]).
-///
-/// A single instance is shared by every `Mock*Api`, so creating a
-/// namespace in one screen is immediately visible when another screen
-/// (e.g. the layer form's namespace dropdown) reloads its list — the same
-/// behaviour the real gateway would give you across two browser tabs.
 class MockBackend {
   MockBackend() {
     _seed();
@@ -342,9 +335,6 @@ class MockBackend {
     return updated;
   }
 
-  /// Deterministic pseudo-random bucket in [0, 100) for a given seed —
-  /// used so the same id always lands in the same bucket instead of
-  /// flapping between calls.
   int _bucketFor(Object seed) => seed.hashCode.abs() % 100;
 
   bool isFeatureEnabledFor(int featureToggleId) {
