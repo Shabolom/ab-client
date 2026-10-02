@@ -23,14 +23,6 @@ import 'features/namespaces/data/namespaces_api.dart';
 import 'features/users/data/gateway_users_api.dart';
 import 'features/users/data/users_api.dart';
 
-/// Single entry point into the gateway: one shared [ApiClient] (so the
-/// session cookie and 401-refresh logic apply everywhere), fanned out into
-/// one `*Api` per domain.
-///
-/// When [AppConfig.useMockApi] is set (`--dart-define=USE_MOCK_API=true`),
-/// every `*Api` is instead backed by an in-memory [MockBackend] and no
-/// network call is ever made — handy for working on the UI without the Go
-/// backend running.
 class GatewayClient {
   GatewayClient._(
     this.auth,
@@ -79,7 +71,5 @@ class GatewayClient {
   final CustomParamsApi customParams;
   final FeatureTogglesApi featureToggles;
 
-  /// True when this client is running fully offline against [MockBackend]
-  /// rather than the real gateway.
   final bool isMock;
 }
