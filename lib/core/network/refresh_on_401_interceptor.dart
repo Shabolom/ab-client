@@ -2,14 +2,6 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 
-/// Transparently refreshes the session once on a 401 and retries the
-/// original request, so callers never have to special-case token
-/// expiry themselves.
-///
-/// Concurrent 401s share a single in-flight refresh call instead of each
-/// firing their own `/v1/auth/refresh` request. A request that has already
-/// been retried once is never retried again, so a refresh that itself
-/// keeps failing with 401 cannot loop.
 class RefreshOn401Interceptor extends Interceptor {
   RefreshOn401Interceptor(this._dio);
 
